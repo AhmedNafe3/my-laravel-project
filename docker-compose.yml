@@ -1,0 +1,15 @@
+services:
+    php:
+        container_name: php
+        build:
+            context: .
+            target: php
+            args:
+                - APP_ENV=${APP_ENV}
+        environment:
+            - APP_ENV=${APP_ENV}
+        working_dir: /app
+        volumes:
+            - ./:/app
+        ports:
+            - 8080:8080
