@@ -20,7 +20,7 @@ git branch -M main
 git push -uf origin main
 ```
 
-## Integrate with your tools
+## Integrate with your tools and 
 
 - [ ] [Set up project integrations](https://gitlab.com/a.nafea/my-laravel-project/-/settings/integrations)
 
