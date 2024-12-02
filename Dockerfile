@@ -1,5 +1,5 @@
 # Used for prod build.
-FROM 339712724064.dkr.ecr.eu-central-1.amazonaws.com/prod-my-laravel-project-base-image:latest as php
+FROM 339712724064.dkr.ecr.eu-central-1.amazonaws.com/prod-laravel-base-image:latest as php
 
 # Copy configuration files.
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
