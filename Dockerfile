@@ -11,8 +11,6 @@ WORKDIR /app
 
 # Copy files from current folder to container current folder (set in workdir).
 COPY --chown=www-data:www-data . .
-# Install Xdebug
-RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Create laravel caching folders.
 RUN mkdir -p ./storage/framework
