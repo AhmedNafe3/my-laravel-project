@@ -1,4 +1,4 @@
-version: 0.2
+version: 0.3
         
 phases:
   install:
@@ -26,5 +26,4 @@ phases:
   post_build:
     on-failure: ABORT
     commands:
-      - docker images ls -a
       - docker push $REPOSITORY/$IMAGE:$IMAGE_TAG
