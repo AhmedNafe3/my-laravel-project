@@ -7,7 +7,6 @@ phases:
       php: 8.2
     commands:
       - echo 'install phase'
-      - apt-get update -y
 
   pre_build:
     on-failure: ABORT
