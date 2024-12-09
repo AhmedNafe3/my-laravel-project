@@ -18,7 +18,7 @@ if [ ! -f ".env" ]; then
     ;;
     esac
 else
-    echo "env file exists."
+    echo "env file exists is $APP_ENV."
 fi
 
 # php artisan migrate
