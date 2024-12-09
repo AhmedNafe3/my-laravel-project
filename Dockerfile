@@ -1,9 +1,6 @@
 # Used for prod build.
 FROM  339712724064.dkr.ecr.us-east-1.amazonaws.com/prod-laravel-api-base-image:latest as php
 
-# Install Xdebug
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-
 # Copy configuration files.
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 COPY ./docker/php/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
@@ -14,6 +11,8 @@ WORKDIR /app
 
 # Copy files from current folder to container current folder (set in workdir).
 COPY --chown=www-data:www-data . .
+# Install Xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Create laravel caching folders.
 RUN mkdir -p ./storage/framework
