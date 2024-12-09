@@ -8,7 +8,8 @@ COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Set working directory to ...
 WORKDIR /app
-
+RUN sudo chmod -R 775 bootstrap/cache/
+RUN sudo chmod -R 775 storage/
 # Copy files from current folder to container current folder (set in workdir).
 COPY --chown=www-data:www-data . .
 
