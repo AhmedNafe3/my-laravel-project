@@ -1,6 +1,9 @@
 # Used for prod build.
 FROM  339712724064.dkr.ecr.us-east-1.amazonaws.com/prod-laravel-api-base-image:latest as php
 
+# Install Xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
 # Copy configuration files.
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 COPY ./docker/php/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
