@@ -18,12 +18,13 @@ if [ ! -f ".env" ]; then
     ;;
     esac
 else
-    echo "env file exists is $APP_ENV."
+    echo "env file exists."
 fi
 
 # php artisan migrate
 php artisan clear
 php artisan optimize:clear
+php artisan key:generate
 php artisan migrate
 
 # Fix files ownership.
