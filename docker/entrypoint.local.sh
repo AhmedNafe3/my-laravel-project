@@ -16,5 +16,5 @@ php artisan optimize clear
 php artisan view:clear
 php artisan route:clear
 
-sudo php-fpm -D
-sudo nginx -g "daemon off;"
+php-fpm -D
+nginx -g "daemon off;"
